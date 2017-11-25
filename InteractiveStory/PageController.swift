@@ -73,8 +73,10 @@ class PageController: UIViewController {
 		
 		let title = self.page?.firstChoice?.title ?? "Play Again"
 		let selector = self.page?.firstChoice != nil ? #selector(PageController.loadFirstChoice) : #selector(PageController.playAgain)
-		
+
 		button.setTitle(title, for: .normal)
+		button.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+		button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
 		button.addTarget(self, action: selector, for: .touchUpInside)
 		
 		return button
@@ -84,7 +86,14 @@ class PageController: UIViewController {
 		let button = UIButton(type: .system)
 		button.translatesAutoresizingMaskIntoConstraints = false
 		
-		button.setTitle(self.page?.secondChoice?.title, for: .normal)
+		if let title = self.page?.secondChoice?.title {
+			button.setTitle(self.page?.secondChoice?.title, for: .normal)
+			button.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+			button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+		} else {
+			button.isHidden = true
+		}
+		
 		button.addTarget(self, action: #selector(PageController.loadSecondChoice), for: .touchUpInside)
 		
 		return button
@@ -134,13 +143,17 @@ class PageController: UIViewController {
 		view.addSubview(firstChoiceButton)
 		
 		NSLayoutConstraint.activate([
+			firstChoiceButton.heightAnchor.constraint(equalToConstant: 40),
+			firstChoiceButton.widthAnchor.constraint(equalToConstant: 250),
 			firstChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-			firstChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
+			firstChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
 			])
 		
 		view.addSubview(secondChoiceButton)
 		
 		NSLayoutConstraint.activate([
+			secondChoiceButton.heightAnchor.constraint(equalToConstant: 40),
+			secondChoiceButton.widthAnchor.constraint(equalToConstant: 250),
 			secondChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			secondChoiceButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32)
 			])
