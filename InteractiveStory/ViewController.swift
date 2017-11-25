@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 						throw AdventureError.nameNotProvided
 					} else {
 						guard let pageController = segue.destination as? PageController else { return }
-						pageController.page = Adventure.story(withName: "Addison")
+						pageController.page = Adventure.story(withName: name)
 					}
 				}
 			} catch AdventureError.nameNotProvided {
