@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InteractiveStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InteractiveStory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,19 +27,36 @@
                                     <segue destination="iJS-tt-3h3" kind="show" identifier="startAdventure" id="Pdp-Yl-ZRd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxa-0P-xCQ">
+                                <rect key="frame" x="24" y="519" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Jkj-hu-kxi"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0i1-VC-t5a" secondAttribute="bottom" id="N3O-Oo-5sU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bxa-0P-xCQ" secondAttribute="trailing" constant="24" id="OM3-C6-uqP"/>
                             <constraint firstItem="0i1-VC-t5a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Of9-Wc-8dE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gwB-FF-Iip" secondAttribute="bottom" constant="48" id="Pvr-ad-MWc"/>
                             <constraint firstItem="gwB-FF-Iip" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qe6-I7-6gP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0i1-VC-t5a" secondAttribute="trailing" id="Vnz-5k-inh"/>
                             <constraint firstItem="0i1-VC-t5a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yfl-Y1-bPS"/>
+                            <constraint firstItem="bxa-0P-xCQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="bLW-Wy-BNh"/>
+                            <constraint firstItem="gwB-FF-Iip" firstAttribute="top" secondItem="bxa-0P-xCQ" secondAttribute="bottom" constant="40" id="ktF-Sn-Bme"/>
+                            <constraint firstItem="bxa-0P-xCQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q6S-Bk-YUa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="rld-Ht-1Jb"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="bxa-0P-xCQ" id="18h-wp-Fe1"/>
+                        <outlet property="textFieldBottomConstraint" destination="ktF-Sn-Bme" id="RLy-ql-eUt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +65,7 @@
         <!--Page Controller-->
         <scene sceneID="39n-aY-D8b">
             <objects>
-                <viewController id="iJS-tt-3h3" customClass="PageController" customModule="InteractiveStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iJS-tt-3h3" customClass="PageController" customModule="InteractiveStory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fiq-Fa-7MK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
