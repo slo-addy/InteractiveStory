@@ -23,7 +23,7 @@ extension Story {
 		let attributedString = NSMutableAttributedString(string: text)
 		let paragraphStyle = NSMutableParagraphStyle()
 		
-		paragraphStyle.lineSpacing = 10
+		paragraphStyle.lineSpacing = 5
 		attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
 		
 		return attributedString

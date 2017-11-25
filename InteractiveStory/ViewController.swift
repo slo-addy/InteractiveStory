@@ -69,6 +69,10 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+		nameTextField.resignFirstResponder()
+	}
+	
 	deinit {
 		// Must remove self as registered observer when being released from memory
 		// If your app targets iOS 9.0 and later or macOS 10.11 and later,
